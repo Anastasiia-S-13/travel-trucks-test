@@ -1,21 +1,26 @@
 import { api } from "@/lib/api/api";
 import { CampersResponse } from "@/types/Camper";
 
-export const fetchCampers = async (page: number): Promise<CampersResponse> => {
+export const fetchCampers = async (
+    pageParam: number = 1
+): Promise<CampersResponse> => {
+    const limit = 4;
     const response = await api.get("/campers", {
-        params: { page, limit: 4 },
+        params: { page: pageParam, limit: limit },
     });
 
-    const campersArray =
-        response.data?.campers?.items ||
-        response.data?.items ||
+    const campers =
+        response.data?.campers?.items ??
+        response.data?.items ??
         (Array.isArray(response.data) ? response.data : []);
 
-    const totalPages = response.data?.campers?.totalPages || response.data?.totalPages || 1;
+    const totalCount = Number(response.headers["x-total-count"]) || 0;
+
+    const totalPages = totalCount > 0 ? Math.ceil(totalCount / limit) : (campers.length === limit ? pageParam + 1 : pageParam);
 
     return {
-        campers: campersArray,
+        campers,
+        page: pageParam,
         totalPages: totalPages,
-        page: page,
     };
 };
