@@ -2,9 +2,37 @@
   background-image: url('/hero-background.jpg');
   background-size: cover;
   background-position: center;
-  height: 100vh;
 }
 
 .textContainer {
   color: white;
+  max-width: 580px;
+  padding: 260px 0px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 0.67;
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  margin-bottom: 40px;
+}
+
+.btnMore {
+  display: inline-block;
+  border-radius: 200px;
+  padding: 16px 60px;
+  background-color: #e44848;
+  transition: background-color 0.3s ease;
+}
+
+.btnMore:hover,
+.btnMore:focus {
+  background-color: #d84343;
 }
