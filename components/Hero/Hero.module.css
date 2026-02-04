@@ -1,0 +1,10 @@
+.heroContainer {
+  background-image: url('/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.textContainer {
+  color: white;
+}

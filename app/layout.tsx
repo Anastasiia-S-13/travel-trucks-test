@@ -33,10 +33,10 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={inter.variable} suppressHydrationWarning>
-        <div className="container">
           <Header />
-          <Providers>{children}</Providers>
-        </div>
+        <Providers>
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );
