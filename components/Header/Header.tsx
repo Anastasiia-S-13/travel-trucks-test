@@ -14,7 +14,7 @@ export default function Header() {
   ];
   return (
     <header className={css.headerContainer}>
-      <Image src="/logo.svg" alt="Travel Trucks Logo" width={136} height={16} />
+      <Image className={css.logo} src="/logo.svg" alt="Travel Trucks Logo" width={136} height={16} />
       <nav className={css.navContainer}>
         {navLinks.map((link) => {
           const isActive = pathname === link.href;

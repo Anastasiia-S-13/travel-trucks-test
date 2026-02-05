@@ -29,3 +29,7 @@
 .active {
   color: #d84343;
 }
+
+.logo {
+  cursor: pointer;
+}
