@@ -5,7 +5,6 @@ import { Toaster } from "react-hot-toast";
 import { fetchCampers } from "@/lib/api/campers";
 import CampersCatalog from "@/components/Campers/CampersCatalog";
 import { CampersResponse } from "@/types/Camper";
-import css from "./CampersPage.module.css";
 
 export default function CampersPageClient() {
     const {
