@@ -37,3 +37,32 @@
   font-size: 24px;
   line-height: 1.33;
 }
+
+.equipmentList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.equipmentItem {
+  border-radius: 100px;
+  padding: 12px 18px;
+  background-color: #f2f4f7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.showMoreLink {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  border-radius: 200px;
+  padding: 16px 40px;
+  background-color: #e44848;
+  box-sizing: border-box;
+  color: white;
+}

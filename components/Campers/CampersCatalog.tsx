@@ -22,12 +22,8 @@ export default function CampersCatalog({ campers }: { campers: Camper[] }) {
             <p>{camper.rating}({camper.reviews.length} Reviews)</p>
             <p>{camper.location}</p>
             <p>{camper.description}</p>
-            <ul>
-              <li>{camper.transmission}</li>
-              <li>{camper.engine}</li>
               <CamperEquipments camper={camper} />
-            </ul>
-            <Link href={`/campers/${camper._id}`}>Show more</Link>
+            <Link className={css.showMoreLink} href={`/campers/${camper._id}`}>Show more</Link>
           </div>
         </li>
       ))}

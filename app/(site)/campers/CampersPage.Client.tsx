@@ -15,11 +15,11 @@ export default function CampersPageClient() {
         isLoading,
         isError,
     } = useInfiniteQuery<
-        CampersResponse,                           // TQueryFnData
-        Error,                                     // TError
-        InfiniteData<CampersResponse, number>,     // ✅ TData
-        ["campers"],                               // TQueryKey
-        number                                     // TPageParam
+        CampersResponse,                           
+        Error,                                    
+        InfiniteData<CampersResponse, number>,     
+        ["campers"],                               
+        number                                    
     >({
         queryKey: ["campers"],
         initialPageParam: 1,
