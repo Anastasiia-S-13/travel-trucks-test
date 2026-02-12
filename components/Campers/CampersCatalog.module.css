@@ -66,3 +66,11 @@
   box-sizing: border-box;
   color: white;
 }
+
+.camperDescription {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #475467;
+  margin-bottom: 24px;
+}
