@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import { fetchCampers } from "@/lib/api/campers";
 import CampersCatalog from "@/components/Campers/CampersCatalog";
 import { CampersResponse } from "@/types/Camper";
+import css from "./CampersPageClient.module.css";
 
 export default function CampersPageClient() {
     const {
@@ -49,6 +50,7 @@ export default function CampersPageClient() {
 
             {hasNextPage && (
                 <button
+                    className={css.loadMoreButton}
                     onClick={() => fetchNextPage()}
                     disabled={isFetchingNextPage}
                 >
