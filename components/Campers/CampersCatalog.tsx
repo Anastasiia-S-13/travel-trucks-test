@@ -5,7 +5,7 @@ import CamperEquipments from "./CampersEquipments/CampersEquipments";
 import css from "./CampersCatalog.module.css";
 
 export default function CampersCatalog({ campers }: { campers: Camper[] }) {
-  const maxLength =60;
+  const maxLength = 60;
   return (
     <ul className={css.camperList}>
       {campers.map((camper, index) => {
@@ -23,10 +23,19 @@ export default function CampersCatalog({ campers }: { campers: Camper[] }) {
               height={320}
             />
             <div className={css.camperDetails}>
-              <h2 className={css.camperName}>{camper.name}</h2>
-              <p className={css.camperPrice}>€{camper.price}</p>
-              <p>{camper.rating}({camper.reviews.length} Reviews)</p>
-              <p>{camper.location}</p>
+              <div className={css.caption}>
+                <h2 className={css.camperName}>{camper.name}</h2>
+                <p className={css.camperPrice}>€{camper.price}</p>
+              </div>
+              <div className={css.camperInfo}>
+                <p className={css.camperRating}>
+                <svg width={16} height={16}>
+                  <use href={`/sprite/sprite.svg#icon-Rating`} />
+                </svg>{camper.rating}({camper.reviews.length} Reviews)</p>
+                <p className={css.camperLocation}><svg width={16} height={16}>
+                  <use href={`/sprite/sprite.svg#icon-map`} />
+                </svg>{camper.location}</p>
+              </div>
               <p className={css.camperDescription}>{truncatedDescription}</p>
               <CamperEquipments camper={camper} />
               <Link className={css.showMoreLink} href={`/campers/${camper._id}`}>Show more</Link>

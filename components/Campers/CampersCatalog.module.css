@@ -16,10 +16,6 @@
   padding: 24px;
 }
 
-.camperDetails {
-  max-width: 524px;
-}
-
 .camperImage {
   border-radius: 10px;
   width: 292px;
@@ -74,4 +70,29 @@
   line-height: 150%;
   color: #475467;
   margin-bottom: 24px;
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.camperRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.camperInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.camperLocation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }

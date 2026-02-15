@@ -22,8 +22,12 @@ const CamperEquipments = ({ camper }: CamperItemsProps) => {
 
     return (
         <ul className={css.equipmentList}>
-            <li className={css.equipmentItem}>{camper.transmission}</li>
-            <li className={css.equipmentItem}>{camper.engine}</li>
+            <li className={css.equipmentItem}><svg width={20} height={20}>
+                            <use href={`/sprite/sprite.svg#${camper.transmission === "automatic" ? "icon-automatic" : "icon-manual-transmission"}`} />
+                        </svg>{camper.transmission}</li>
+            <li className={css.equipmentItem}><svg width={20} height={20}>
+                            <use href={`/sprite/sprite.svg#${camper.engine === "diesel" ? "icon-diesel" : "icon-petrol"}`} />
+                        </svg>{camper.engine}</li>
             {equipmentOptions
                 .filter((item) => camper[item.key])
                 .map((item) => (
