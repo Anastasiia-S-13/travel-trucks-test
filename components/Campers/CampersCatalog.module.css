@@ -62,6 +62,12 @@
   background-color: #e44848;
   box-sizing: border-box;
   color: white;
+  transition: background-color 0.3s ease;
+}
+
+.showMoreLink:hover,
+.showMoreLink:focus {
+  background-color: #c73737;
 }
 
 .camperDescription {
