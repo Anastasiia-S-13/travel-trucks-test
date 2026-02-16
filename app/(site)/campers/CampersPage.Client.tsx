@@ -44,8 +44,9 @@ export default function CampersPageClient() {
     if (isError) return <p>Error loading campers</p>;
 
     return (
-        <div className="container">
-            <Toaster />
+        <section className="container">
+            <div className={css.asideWrapper}>
+                <Toaster />
 
             <AsideForm
                 filters={filters}
@@ -70,6 +71,7 @@ export default function CampersPageClient() {
                     </button>
                 )}
             </div>
-        </div>
+            </div>
+        </section>
     );
 }

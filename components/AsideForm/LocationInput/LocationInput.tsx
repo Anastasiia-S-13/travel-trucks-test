@@ -1,13 +1,15 @@
 import { CampersFilterItemProps } from "@/types/Camper";
+import css from "./LocationInput.module.css";
 
 export default function LocationInput({ filters, setFilters }: CampersFilterItemProps) {
   return (
     <div>
-      <label htmlFor="location">
+      <label className={css.label} htmlFor="location">
         Location
       </label>
       <div>
-        <input
+              <input
+                  className={css.locationInput}
           id="location"
           name="location"
           type="text"
