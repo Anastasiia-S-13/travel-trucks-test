@@ -48,3 +48,26 @@ export interface CampersResponse {
   page: number;
   totalPages: number;
 }
+
+export interface CampersQueryParams {
+  page?: number;
+  limit?: number;
+  location?: string;
+  transmission?: "automatic" | "manual";
+  engine?: "diesel" | "petrol" | "electric";
+  form?: "alcove" | "integrated" | "semi-integrated";
+  AC?: boolean;
+  bathroom?: boolean;
+  kitchen?: boolean;
+  TV?: boolean;
+  radio?: boolean;
+  refrigerator?: boolean;
+  microwave?: boolean;
+  water?: boolean;
+  gas?: boolean;
+}
+
+export interface CampersFilterItemProps {
+  filters: CampersQueryParams;
+  setFilters: (filters: CampersQueryParams) => void;
+}

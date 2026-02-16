@@ -1,12 +1,13 @@
 import { api } from "@/lib/api/api";
-import { CampersResponse } from "@/types/Camper";
+import { CampersQueryParams, CampersResponse } from "@/types/Camper";
 
 export const fetchCampers = async (
-    pageParam: number = 1
+    pageParam: number = 1,
+    filters: CampersQueryParams
 ): Promise<CampersResponse> => {
     const limit = 4;
     const response = await api.get("/campers", {
-        params: { page: pageParam, limit: limit },
+        params: { page: pageParam, limit: limit, filters: filters },
     });
 
     const campers =
