@@ -1,3 +1,9 @@
+export type CamperForm = "alcove" | "fullyIntegrated" | "panelTruck";
+
+export type Transmission = "automatic" | "manual";
+
+export type Engine = "diesel" | "petrol" | "hybrid";
+
 export interface Camper {
   _id: string;
   name: string;
@@ -6,7 +12,7 @@ export interface Camper {
   location: string;
   description: string;
 
-  form: "alcove" | "integrated" | "semi-integrated" | string;
+  form: CamperForm;
 
   length: string;
   width: string;
@@ -15,8 +21,8 @@ export interface Camper {
   tank: string;
   consumption: string;
 
-  transmission: "automatic" | "manual";
-  engine: "diesel" | "petrol" | "electric" | string;
+  transmission: Transmission;
+  engine: Engine;
 
   AC: boolean;
   bathroom: boolean;
@@ -53,9 +59,9 @@ export interface CampersQueryParams {
   page?: number;
   limit?: number;
   location?: string;
-  transmission?: "automatic" | "manual";
-  engine?: "diesel" | "petrol" | "electric";
-  form?: "alcove" | "integrated" | "semi-integrated";
+  transmission?: Transmission;
+  engine?: Engine;
+  form?: CamperForm;
   AC?: boolean;
   bathroom?: boolean;
   kitchen?: boolean;

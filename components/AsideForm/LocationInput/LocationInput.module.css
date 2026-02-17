@@ -1,18 +1,26 @@
+.locationWrapper {
+  margin-bottom: 40px;
+}
+
 .locationInput {
   border: 1px solid #dadde1;
   border-radius: 12px;
-  padding: 16px 20px;
+  padding: 16px 20px 16px 48px;
   width: 360px;
   box-sizing: border-box;
   background-color: #f7f7f7;
   margin-top: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #101828;
 }
 .locationInput::placeholder {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  color: #101828;
+  color: #6c717b;
 }
 
 .label {
@@ -21,4 +29,15 @@
   font-size: 16px;
   line-height: 1.5;
   color: #6c717b;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 55%;
+  left: 20px;
+  transform: translateY(-50%);
 }
