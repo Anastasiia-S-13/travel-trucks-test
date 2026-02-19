@@ -15,4 +15,10 @@
   color: #101828;
   margin: 0 auto;
   display: block;
+  transition: border-color 0.3s ease;
+}
+
+.loadMoreButton:hover,
+.loadMoreButton:focus {
+  border-color: #d84343;
 }

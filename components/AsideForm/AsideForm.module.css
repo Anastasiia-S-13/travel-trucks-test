@@ -1,5 +1,5 @@
 .form {
-  max-width: 360px;
+  max-width: 390px;
 }
 
 .filtersCaption {
@@ -8,4 +8,49 @@
   line-height: 1.5;
   color: #475467;
   margin-bottom: 32px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.submitButton {
+  border-radius: 200px;
+  padding: 18px 0;
+  width: 166px;
+  background-color: #e44848;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover,
+.submitButton:focus {
+  background-color: #d84343;
+}
+
+.resetButton {
+  border-radius: 200px;
+  padding: 18px 0;
+  width: 166px;
+  border: 1px solid #dadde1;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.resetButton:hover,
+.resetButton:focus {
+  border-color: #d84343;
 }

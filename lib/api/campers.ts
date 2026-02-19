@@ -7,7 +7,7 @@ export const fetchCampers = async (
 ): Promise<CampersResponse> => {
     const limit = 4;
     const response = await api.get("/campers", {
-        params: { page: pageParam, limit: limit, filters: filters },
+        params: { page: pageParam, limit: limit, ...filters },
     });
 
     const campers =

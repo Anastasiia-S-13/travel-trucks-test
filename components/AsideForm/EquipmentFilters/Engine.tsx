@@ -1,4 +1,5 @@
 import type { CampersQueryParams, Engine } from "@/types/Camper";
+import css from "./EquipmentFilters.module.css";
 
 
 export type VehicleTypeFiltersProps = {
@@ -14,17 +15,20 @@ export default function Engine({ filters, setFilters }: VehicleTypeFiltersProps)
     ];
 
     return (
-        <div>
-            <h3>Engine type</h3>
-            <ul>
-                {options.map(option => (
-                    <li key={option.value} onClick={() =>
-                        setFilters({ ...filters, engine: option.value as Engine })
-                    }><svg width={20} height={20}>
-                            <use href={`/sprite/sprite.svg#${option.icon}`} />
-                        </svg>{option.label}
-                    </li>
-                ))}
+        <div className={css.filterContainer}>
+            <h3 className={css.filterTitle}>Engine type</h3>
+            <ul className={css.filterList}>
+                {options.map(option => {
+                    const isActive = filters?.engine === option.value;
+                    return (
+                        <li className={`${css.filterItem} ${isActive ? css.active : ""}`} key={option.value} onClick={() =>
+                            setFilters({ ...filters, engine: option.value as Engine })
+                        }><svg width={20} height={20}>
+                                <use href={`/sprite/sprite.svg#${option.icon}`} />
+                            </svg>{option.label}
+                        </li>
+                    )
+                })}
             </ul>
         </div>
     );

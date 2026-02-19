@@ -48,29 +48,29 @@ export default function CampersPageClient() {
             <div className={css.asideWrapper}>
                 <Toaster />
 
-            <AsideForm
-                filters={filters}
-                setFilters={setFilters}
-                onReset={handleReset}
-            />
+                <AsideForm
+                    filters={filters}
+                    setFilters={setFilters}
+                    onReset={handleReset}
+                />
 
-            <div className={css.catalogWrapper}>
-                {campers.length > 0 ? (
-                    <CampersCatalog campers={campers} />
-                ) : (
-                    <p>No campers found.</p>
-                )}
+                <div className={css.catalogWrapper}>
+                    {campers.length > 0 ? (
+                        <CampersCatalog campers={campers} />
+                    ) : (
+                        <p>No campers found.</p>
+                    )}
 
-                {hasNextPage && (
-                    <button
-                        className={css.loadMoreButton}
-                        onClick={() => fetchNextPage()}
-                        disabled={isFetchingNextPage}
-                    >
-                        {isFetchingNextPage ? "Loading..." : "Load More"}
-                    </button>
-                )}
-            </div>
+                    {hasNextPage && (
+                        <button
+                            className={css.loadMoreButton}
+                            onClick={() => fetchNextPage()}
+                            disabled={isFetchingNextPage}
+                        >
+                            {isFetchingNextPage ? "Loading..." : "Load More"}
+                        </button>
+                    )}
+                </div>
             </div>
         </section>
     );

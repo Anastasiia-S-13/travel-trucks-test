@@ -1,4 +1,5 @@
 import type { CampersQueryParams, Transmission } from "@/types/Camper";
+import css from "./EquipmentFilters.module.css";
 
 
 export type VehicleTypeFiltersProps = {
@@ -13,17 +14,20 @@ export default function Transmission({ filters, setFilters }: VehicleTypeFilters
     ];
 
     return (
-        <div>
-            <h3>Transmission type</h3>
-            <ul>
-                {options.map(option => (
-                    <li key={option.value} onClick={() =>
-                        setFilters({ ...filters, transmission: option.value as Transmission})
-                    }><svg width={20} height={20}>
-                            <use href={`/sprite/sprite.svg#${option.icon}`} />
-                        </svg>{option.label}
-                    </li>
-                ))}
+        <div className={css.filterContainer}>
+            <h3 className={css.filterTitle}>Transmission type</h3>
+            <ul className={css.filterList}>
+                {options.map(option => {
+                    const isActive = filters?.transmission === option.value;
+                    return (
+                        <li className={`${css.filterItem} ${isActive ? css.active : ""}`} key={option.value} onClick={() =>
+                            setFilters({ ...filters, transmission: option.value as Transmission})
+                        }><svg width={20} height={20}>
+                                <use href={`/sprite/sprite.svg#${option.icon}`} />
+                            </svg>{option.label}
+                        </li>
+                    )
+                })}
             </ul>
         </div>
     );

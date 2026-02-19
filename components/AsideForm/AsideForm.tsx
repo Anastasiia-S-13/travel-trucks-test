@@ -39,14 +39,16 @@ export default function AsideForm({ filters, setFilters, onReset }: AsideFormPro
                 setFilters={setLocalFilters}
             />
             <p className={css.filtersCaption}>Filters</p>
-            <Equipment />
+            <Equipment filters={localFilters} setFilters={setLocalFilters} />
             <CamperType filters={localFilters} setFilters={setLocalFilters} />
             <Engine filters={localFilters} setFilters={setLocalFilters} />
             <Transmission filters={localFilters} setFilters={setLocalFilters} />
-            <button type="submit">Search</button>
-            <button type="button" onClick={handleResetLocal}>
-                Reset
-            </button>
+            <div className={css.buttonContainer}>
+                <button type="submit" className={css.submitButton}>Search</button>
+                <button type="button" onClick={handleResetLocal} className={css.resetButton}>
+                    Reset
+                </button>
+            </div>
         </form>
     );
 }
