@@ -9,15 +9,18 @@ export default function CampersCatalog({ campers }: { campers: Camper[] }) {
   return (
     <ul className={css.camperList}>
       {campers.map((camper, index) => {
-        const truncatedDescription = camper.description.length > maxLength
+        const id = camper._id ?? String(index);
+        const truncatedDescription = camper.description?.length > maxLength
           ? camper.description.substring(0, maxLength) + "..."
-          : camper.description;
+          : camper.description ?? "";
+
+        const thumb = camper.gallery?.[0]?.thumb ?? "/hero-background.jpg";
 
         return (
-          <li className={css.camperItem} key={camper._id || index}>
+          <li className={css.camperItem} key={id}>
             <Image
               className={css.camperImage}
-              src={camper.gallery[0]?.thumb}
+              src={thumb}
               alt="Camper truck"
               width={292}
               height={320}
@@ -31,14 +34,14 @@ export default function CampersCatalog({ campers }: { campers: Camper[] }) {
                 <p className={css.camperRating}>
                 <svg width={16} height={16}>
                   <use href={`/sprite/sprite.svg#icon-Rating`} />
-                </svg>{camper.rating}({camper.reviews.length} Reviews)</p>
+                </svg>{camper.rating}({camper.reviews?.length ?? 0} Reviews)</p>
                 <p className={css.camperLocation}><svg width={16} height={16}>
                   <use href={`/sprite/sprite.svg#icon-map`} />
                 </svg>{camper.location}</p>
               </div>
               <p className={css.camperDescription}>{truncatedDescription}</p>
               <CamperEquipments camper={camper} />
-              <Link className={css.showMoreLink} href={`/campers/${camper._id}`}>Show more</Link>
+              <Link className={css.showMoreLink} href={`/campers/${id}`}>Show more</Link>
             </div>
           </li>
         );
