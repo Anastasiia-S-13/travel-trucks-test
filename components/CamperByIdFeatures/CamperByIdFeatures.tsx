@@ -1,10 +1,10 @@
 import { Camper } from "@/types/Camper";
 
 
-export const CamperByIdFeatures = ({ data }: { data: Camper }) => {
+export default function CamperByIdFeatures({ data }: { data: Camper }) {
   return (
     <div>
-     <h3>{data.name}</h3>
+      <h4>Features</h4>
     </div>
   );
 };
