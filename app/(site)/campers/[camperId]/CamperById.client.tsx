@@ -4,10 +4,10 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { fetchCamperById } from "@/lib/api/campers";
-import { CamperByIdFeatures } from "@/components/CamperByIdFeatures/CamperByIdFeatures";
-import CamperbyIdReviews from "@/components/CamperbyIdReviews/CamperbyIdReviews";
-import CamperByIdBooking from "@/components/CamperByIdBooking/CamperByIdBooking";
 import css from "./CamperByIdClient.module.css";
+import { CamperByIdFeatures } from "@/components/CamperByIdFeatures/CamperByIdFeatures";
+import CamperByIdBooking from "@/components/CamperByIdBooking/CamperByIdBooking";
+import CamperByIdReviews from "@/components/CamperByIdReviews/CamperByIdReviews";
 
 const CamperByIdClient = () => {
   const [tooglePage, setTooglePage] = useState<"features" | "reviews">(
@@ -49,7 +49,7 @@ const CamperByIdClient = () => {
         {tooglePage === "features" ? (
           <CamperByIdFeatures data={data} />
         ) : (
-          <CamperbyIdReviews />
+          <CamperByIdReviews/>
         )}
         <CamperByIdBooking />
       </div>
