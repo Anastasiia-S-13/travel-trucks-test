@@ -16,7 +16,7 @@ const equipmentOptions: { key: EquipmentKey; label: string; icon: string }[] = [
 export default function CamperByIdFeatures({ data }: { data: Camper }) {
   return (
     <div>
-      <ul>
+      <ul className={css.equipmentList}>
         <li className={css.equipmentItem}>
           <svg width={20} height={20}>
             <use href={`/sprite/sprite.svg#${data.transmission === "automatic" ? "icon-automatic" : "icon-manual-transmission"}`} />
@@ -40,7 +40,7 @@ export default function CamperByIdFeatures({ data }: { data: Camper }) {
             </li>
           ))}
       </ul>
-      
+
     </div>
   );
 }

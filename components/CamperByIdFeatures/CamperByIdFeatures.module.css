@@ -1,0 +1,16 @@
+.equipmentList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+  width: 50%;
+}
+
+.equipmentItem {
+  border-radius: 100px;
+  padding: 12px 18px;
+  background-color: #f2f4f7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
